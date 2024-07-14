@@ -1,0 +1,66 @@
+@import './reset.scss';
+@import './variables.scss';
+
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: $font-color;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease;
+
+    @media screen and (max-width: 768px){
+        max-width: 100vw;
+    }
+
+    &.darkModeTheme {
+        background-color: $font-color;
+        color: $bg;
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, .1);
+
+            div ul > li {
+                svg {
+                    fill: $bg;
+                }
+
+                &:hover,
+                &.active {
+                    background-color: #101720;
+                    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, .1);
+                }  
+            }
+
+            > ul > li  {
+                box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, .1);
+            }
+        }
+
+        main > section > section {
+            background-color: $font-color;
+            box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        > #scrollToTop {
+
+            > button {
+                background-color: $font-color;
+                box-shadow: 0px 1px 10px 1px rgba(255, 255, 255, 0.1);
+
+                > svg {
+                    fill: $bg;
+                }
+            }
+        }
+    }
+
+    @import './header.scss';
+    @import './aboutme.scss';
+    @import './navbar.scss';
+    @import './main.scss';
+    @import './scrollToTopButton.scss';
+} 

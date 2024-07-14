@@ -1,0 +1,39 @@
+> #scrollToTop {
+    position: fixed;
+    opacity: 0;
+    top: initial;
+    left: initial;
+    z-index: -1;
+    transition: all .2s ease;
+
+
+    > button {
+        cursor: pointer;
+        border: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.106);
+        padding: 10px;
+        width: 3rem;
+        height: 3rem;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &.activeScrollToTop {
+        z-index: 0;
+        right: 50px;
+        opacity: 1;
+        bottom: 50px;
+    }
+
+    @media screen and (max-width: 768px){
+        &.activeScrollToTop {
+            right: 30px;
+            bottom: 120px;
+        }   
+    }
+}

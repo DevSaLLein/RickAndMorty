@@ -1,0 +1,173 @@
+> main {
+    min-height: 100vh;
+    padding: 8rem;
+    display: flex;  
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    max-width: calc(100% - 100px);
+    justify-content: center;
+    align-self: self-end;
+    
+    > h2 {
+        font-size: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    
+    > section {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+
+        > section {
+            display: flex;
+            align-items: center;
+            background-color: $bg;
+            justify-content: center;
+            gap: 1rem;
+            height: 250px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+            transition: all .3s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+        
+            > figure {
+                position: relative;
+                overflow: hidden;
+                height: 100%;
+                min-width: 200px;
+                max-width: 200px;
+                border-radius: 10px 0 0 10px;
+        
+                > img {
+                    position: absolute;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: inherit;
+                    width: 100%;
+                    height: 100%;
+                    transition: .2s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        
+            > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+                width: 100%;
+        
+                > header {
+                    height: initial;
+
+                    > span {
+                        font-size: 1.5rem;
+                        font-weight: 900;
+                    }
+        
+                    > p {
+                        display: flex;
+                        gap: .5rem;
+        
+                        > div {
+                            display: flex;
+                            align-items: center;
+                            gap: .2rem;
+        
+                            > span {
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 100%;
+                            }
+                        
+                            .alive {
+                                background-color: green;
+                            }
+                        
+                            .dead {
+                                background-color: red;
+                            }
+                        }
+                    }
+                }
+        
+                > main {
+                    > p:first-child {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+        
+                > footer {
+                    > p:first-child {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media screen and (max-width: 768px) {  
+        padding: 8rem 0;
+        min-width: 100%;
+    
+        > section {
+            > section {
+                flex-direction: column;
+                height: max-content;
+                width: 100vw;
+
+                &:hover {
+                    transform: initial;
+                }
+
+                > figure {
+                    min-width: 100%;
+                    border-radius: 0 0 10px 10px;
+                    height: 600px;
+
+                    img {
+                        &:hover {
+                            transform: initial
+                        }
+                    }
+                }
+        
+                > div {
+                    padding: 10px;
+                    width: 100%;
+                    gap: 1rem;
+
+                    > header { 
+                        > span {
+                            font-size: 2rem;
+                        }   
+                    }
+
+                    > main, footer {
+                        > p:first-child {
+                            font-size: 1.3rem;
+                        }
+
+                        > p:last-child {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
