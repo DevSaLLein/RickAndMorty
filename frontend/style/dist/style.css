@@ -42,8 +42,6 @@ body > header {
   clip-path: inset(0);
 }
 body > header > div {
-  display: flex;
-  align-items: end;
   padding: 2rem;
   position: absolute;
   width: 100%;
@@ -51,6 +49,12 @@ body > header > div {
   background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
 }
 body > header > div > h1 {
+  position: absolute;
+  top: initial;
+  bottom: 40px;
+  left: 20px;
+  width: max-content;
+  height: max-content;
   font-size: 4rem;
   color: #F8F8FF;
   font-weight: 900;

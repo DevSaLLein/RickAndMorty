@@ -4,8 +4,6 @@
     clip-path: inset(0);
 
     > div {
-        display: flex;
-        align-items: end;
         padding: 2rem;
         position: absolute;
         width: 100%;
@@ -13,6 +11,12 @@
         background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
 
         > h1 {
+            position: absolute;
+            top: initial;
+            bottom: 40px;
+            left: 20px;
+            width: max-content;
+            height: max-content;
             font-size: 4rem;
             color: $bg;
             font-weight: 900;

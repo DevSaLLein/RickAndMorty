@@ -25,7 +25,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     const characteres = [];
 
-
     for(const objectCharacter of characteresData.results) {
 
         const {
