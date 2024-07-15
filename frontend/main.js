@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     const characteres = [];
 
+
     for(const objectCharacter of characteresData.results) {
 
         const {
@@ -33,8 +34,10 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         const id = formatId(episode[0]);
         
-        const firstEpisodeData = await fetch(`http://localhost:3001/api/episode/${id}`);
-
+        const firstEpisodeData = await fetch(`http://localhost:3001/api/episode/${id}`)
+            .then(response => response.json())    
+        ;
+            
         characteres.push({
             name,
             status,
