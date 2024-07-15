@@ -221,7 +221,9 @@ body > nav > ul > li > div.sun {
 }
 @media screen and (max-width: 1025px) {
   body > nav {
-    bottom: 10px;
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: -100%;
     flex-direction: row;
     width: 90%;
     padding: 0 1rem;
@@ -235,8 +237,7 @@ body > nav > ul > li > div.sun {
     flex-direction: row;
   }
   body > nav.navbar-active {
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 20px;
   }
 }
 body.darkModeTheme > main > label > span {
