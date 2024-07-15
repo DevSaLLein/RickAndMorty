@@ -3,10 +3,18 @@ import { formatId } from "./helper/formatId.js";
 import { navbarScroll } from "./scripts/navbar.js";
 import { scrollEventToTop } from "./scripts/scrollToTopEvent.js";
 import { toggleModeThemeEvent } from "./scripts/toggleModeThemeEvent.js";
+import { findCharacter } from "./helper/findCharacterByName.js";
 
 window.addEventListener('DOMContentLoaded', async () => {
 
     const sectionContainerFather = document.querySelector('section');
+
+    const input = document.querySelector("[rel='js-find-characteres']");
+    input.addEventListener('input', (event) => {
+        console.log(event.target.value);
+        const teste = findCharacter(event.target.value, characteresData.results);
+        console.log(teste);
+    })
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -34,12 +42,12 @@ window.addEventListener('DOMContentLoaded', async () => {
             firstEpisodeTitle: firstEpisodeData.name,
             image,
             originName: origin.name
-        })
+        });
     }    
 
     characteres.forEach(character => {
         const sectionElement = createElement(character);
-        sectionContainerFather.appendChild(sectionElement)
+        sectionContainerFather.appendChild(sectionElement);
     })
 
     toggleModeThemeEvent();

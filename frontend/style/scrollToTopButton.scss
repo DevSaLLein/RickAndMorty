@@ -1,3 +1,17 @@
+&.darkModeTheme {
+    > #scrollToTop {
+
+        > button {
+            background-color: $font-color;
+            box-shadow: 0px 1px 10px 1px rgba(255, 255, 255, 0.1);
+
+            > svg {
+                fill: $bg;
+            }
+        }
+    }
+}
+
 > #scrollToTop {
     position: fixed;
     opacity: 0;
@@ -30,9 +44,9 @@
         bottom: 50px;
     }
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 1025px){
         &.activeScrollToTop {
-            right: 30px;
+            right: 45px;
             bottom: 120px;
         }   
     }
